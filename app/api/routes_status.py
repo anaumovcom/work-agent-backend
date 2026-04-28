@@ -27,3 +27,8 @@ async def pause_agents(body: PauseAgentsBody | None = None) -> SystemStatus:
 @router.post("/emergency-stop", response_model=SystemStatus, response_model_by_alias=True)
 async def emergency_stop() -> SystemStatus:
     return await status_service.emergency_stop()
+
+
+@router.post("/reset-emergency-stop", response_model=SystemStatus, response_model_by_alias=True)
+async def reset_emergency_stop() -> SystemStatus:
+    return await status_service.reset_emergency_stop()

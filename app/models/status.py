@@ -44,6 +44,7 @@ class SystemStatus(BaseModel):
     memory: MemoryInfo = MemoryInfo()
     current_mode: SystemMode = Field("live_control", alias="currentMode")
     agents_paused: bool = Field(False, alias="agentsPaused")
+    emergency_stop: bool = Field(False, alias="emergencyStop")
 
     model_config = {"populate_by_name": True}
 
